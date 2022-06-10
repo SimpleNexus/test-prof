@@ -161,6 +161,10 @@ module TestProf
       timestamps == true
     end
 
+    def output=(value)
+      @logger = Logger.new(value, formatter: Logging::Formatter.new)
+    end
+
     def logger
       @logger ||= Logger.new(output, formatter: Logging::Formatter.new)
     end
